@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../Context/AppProvider';
 
-export default function Header({ isOpen, setIsOpen, userInfo }) {
+export default function Header({ isOpen, setIsOpen }) {
+  const { userInfo } = useContext(AppContext);
+
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };

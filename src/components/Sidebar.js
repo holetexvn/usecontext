@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../Context/AppProvider';
 import UserInformation from './UserInformation';
 
-export default function Sidebar({userInfo}) {
+export default function Sidebar() {
+  const { userInfo } = useContext(AppContext);
+
   return (
     <div
       className='sidebar'
@@ -13,7 +16,7 @@ export default function Sidebar({userInfo}) {
       }}
     >
       <h2>Sidebar</h2>
-      <UserInformation  userInfo={userInfo}/>
+      <UserInformation userInfo={userInfo} />
     </div>
   );
 }
