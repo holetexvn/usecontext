@@ -6,14 +6,12 @@ import { useState, useEffect } from 'react';
 import { AppProvider } from './Context/AppProvider';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div className='App'>
       <AppProvider>
-        <Header isOpen={isOpen} setIsOpen={setIsOpen} />
-        <Content isOpen={isOpen} />
-        {isOpen && <Sidebar />}
+        <Header />
+        <Content />
+        <Sidebar />
       </AppProvider>
     </div>
   );

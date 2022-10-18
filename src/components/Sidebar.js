@@ -3,8 +3,8 @@ import { AppContext } from '../Context/AppProvider';
 import UserInformation from './UserInformation';
 
 export default function Sidebar() {
-  const { userInfo } = useContext(AppContext);
-
+  const { userInfo, isOpen } = useContext(AppContext);
+  if (!isOpen) return null;
   return (
     <div
       className='sidebar'
