@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../Context/AppProvider';
 
 export default function Content() {
-  const { isOpen } = useContext(AppContext);
+  const { isOpen, themeStyle } = useContext(AppContext);
 
   return (
     <div
@@ -11,6 +11,7 @@ export default function Content() {
         padding: '10px',
         backgroundColor: 'rgb(228, 228, 228)',
         gridColumn: isOpen ? '2 / 4' : '1 /4',
+        ...themeStyle,
       }}
     >
       <p>

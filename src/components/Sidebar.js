@@ -3,7 +3,7 @@ import { AppContext } from '../Context/AppProvider';
 import UserInformation from './UserInformation';
 
 export default function Sidebar() {
-  const { userInfo, isOpen } = useContext(AppContext);
+  const { userInfo, isOpen, themeStyle } = useContext(AppContext);
   if (!isOpen) return null;
   return (
     <div
@@ -13,6 +13,7 @@ export default function Sidebar() {
         padding: 10,
         gridColumn: '1 / 2',
         gridRow: '1 / 3',
+        ...themeStyle
       }}
     >
       <h2>Sidebar</h2>
