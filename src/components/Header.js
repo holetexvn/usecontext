@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Header({ isOpen, setIsOpen }) {
+export default function Header({ isOpen, setIsOpen, userInfo }) {
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
-  }
+  };
 
   return (
     <div
@@ -17,8 +17,12 @@ export default function Header({ isOpen, setIsOpen }) {
         gridRow: '1 / 2',
       }}
     >
-      <div>Hello! </div>
-      <p style={{ cursor: 'pointer' }} onClick={toggleSidebar}>My profile</p>
+      <div style={{ marginRight: 10, fontWeight: 'bold' }}>
+        Hello! {userInfo.first_name} {userInfo.last_name}
+      </div>
+      <p style={{ cursor: 'pointer' }} onClick={toggleSidebar}>
+        My profile
+      </p>
     </div>
   );
 }

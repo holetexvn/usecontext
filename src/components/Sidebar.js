@@ -1,7 +1,7 @@
 import React from 'react';
 import UserInformation from './UserInformation';
 
-export default function Sidebar() {
+export default function Sidebar({userInfo}) {
   return (
     <div
       className='sidebar'
@@ -13,7 +13,7 @@ export default function Sidebar() {
       }}
     >
       <h2>Sidebar</h2>
-      <UserInformation />
+      <UserInformation  userInfo={userInfo}/>
     </div>
   );
 }
